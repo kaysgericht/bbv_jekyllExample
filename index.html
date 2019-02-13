@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="container-fluid" >
+  <div class="row" style="margin: 1px; padding: 1px">
+    <div class="col-md-8" style="border: 1px solid #DDD">
+      {% for post in site.posts %}
+      <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+
+      <div class="row">
+        <div class="col-md-12">
+          {{ post.content | truncatewords:20 }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="col-md-4" style="border: 1px solid #DDD">
+      <h4>Aktuelle Artikel</h4>
+      <p>Vergangenes:</p>
+      <ul class="disc">
+      {% for post in site.posts limit: 10 %}
+        <h5><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><h5>
+      {% endfor %}
+      </ul>     
+    </div>
+  </div>
+</div>

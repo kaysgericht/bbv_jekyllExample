@@ -1,0 +1,32 @@
+---
+layout: default
+---
+  <div class="row" style="margin: 1px; padding: 1px">
+    <div class="col-md-8" style="border: 1px solid #DDD">
+      <div class="row">
+        <div class="col-md-12">
+
+		<h3>{{ page.title }}</h3>
+
+      <!-- Grid Example -->
+      <div class="row">
+        <div class="col-md-12">
+			{{ content }}      
+        </div>
+      </div>
+
+        </div>
+      </div>
+
+
+    </div>
+    <div class="col-md-4" style="border: 1px solid #DDD">
+      <h4>Aktuelle Artikel</h4>
+      <p>Vergangenes:</p>
+      <ul class="disc">
+      {% for post in site.posts limit: 10 %}
+        <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+      </ul>      
+    </div>
+  </div>
